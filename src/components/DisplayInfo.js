@@ -11,6 +11,8 @@ const DisplayInfo = (props) => {
         setIsShow(!isShow);
     }
 
+    console.log('DisplayInfo render');
+
     return (
         <div className="display-info-container">
             <div>

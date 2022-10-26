@@ -1,6 +1,6 @@
 // class component
 // function component
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DisplayInfo from "./DisplayInfo";
 import AddUserInfo from "./AddUserInfo";
 
@@ -16,14 +16,18 @@ const MyComponent = () => {
         usersClone = usersClone.filter(item => item.id !== userId);
 
         setListUsers([...usersClone]);
-     }
+    }
+
+    useEffect(() => {
+        setTimeout(() => document.title = 'Mark Dat', 3000);
+        console.log('Call me useEffect');
+    }, [listUsers]);
 
     return (
         <>
             <AddUserInfo handleAddNewUser={handleAddNewUser} />
             <br/><br/>
-            {console.log('rerender')}
-            <DisplayInfo listUsers={this.state.listUsers} handleDeleteUser={handleDeleteUser}/>
+            <DisplayInfo listUsers={listUsers} handleDeleteUser={handleDeleteUser}/>
         </>
     );
 }
