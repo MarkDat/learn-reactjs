@@ -6,23 +6,25 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg='light' expand='lg'>
       <Container>
-        <NavLink to='/' className='navbar-brand' end>Demo Project</NavLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <NavLink to='/' className='navbar-brand'>Demo Project</NavLink>
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='me-auto'>
             <NavLink to='/' className='nav-link' end>Home</NavLink>
             <NavLink to='/users' className='nav-link'>User</NavLink>
             <NavLink to='/admins' className='nav-link'>Admin</NavLink>
           </Nav>
           <Nav>
-            <NavDropdown title="Setting" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.3">Profile</NavDropdown.Item>
+            <button className='btn-login'>Login</button>
+            <button className='btn-signup'>Signup</button>
+            {/* <NavDropdown title='Setting' id='basic-nav-dropdown'>
+                <NavDropdown.Item href='#action/3.3'>Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.1">Login</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">LogOut</NavDropdown.Item>
-            </NavDropdown>
+                <NavDropdown.Item href='#action/3.1'>Login</NavDropdown.Item>
+                <NavDropdown.Item href='#action/3.2'>LogOut</NavDropdown.Item>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

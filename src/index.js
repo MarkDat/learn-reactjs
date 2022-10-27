@@ -21,13 +21,13 @@ const router = createBrowserRouter([
         path: "/users",
         element: <User />,
       },
-      {
-        path: "/admins",
-        element: <Admin />,
-      },
       {index: true, element: <Home />},
     ]
   },
+  {
+    path: "/admins",
+    element: <Admin />,
+  }
 ]);
 
 
