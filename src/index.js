@@ -9,6 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import User from './components/User/User';
 import Admin from './components/Admin/Admin';
 import Home from './components/Home/Home'
+import ManagerUser from './components/Admin/Content/ManageUser';
+import Dashboard from './components/Admin/Content/Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/users",
+        path: "users",
         element: <User />,
       },
       {index: true, element: <Home />},
@@ -27,6 +29,13 @@ const router = createBrowserRouter([
   {
     path: "/admins",
     element: <Admin />,
+    children: [
+      {
+        path: "manage-users",
+        element: <ManagerUser />,
+      },
+      {index: true, element: <Dashboard />},
+    ]
   }
 ]);
 
