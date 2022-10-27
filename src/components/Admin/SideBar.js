@@ -8,8 +8,11 @@ import {
     SidebarContent,
 } from 'react-pro-sidebar';
 import { FaTachometerAlt, FaGem, FaGithub, FaRegLaughWink } from 'react-icons/fa';
+import { DiReact } from "react-icons/di";
+import { MdDashboard } from "react-icons/md";
 import sidebarBg from '../../assets/bg2.jpg';
 import "./Admin.scss"
+import "./SideBar.scss"
 
 const SideBar = (props) => {
     const { image, collapsed, rtl, toggled, handleToggleSidebar } = props;
@@ -35,28 +38,27 @@ const SideBar = (props) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        Admin Nek
+                        <DiReact size='3em' color='00bfff'></DiReact>
+                        <span>Admin Nek</span>
                     </div>
                 </SidebarHeader>
 
                 <SidebarContent>
                     <Menu iconShape="circle">
                         <MenuItem
-                            icon={<FaTachometerAlt />}
-                            suffix={<span className="badge red">New</span>}
+                            icon={<MdDashboard />}
                         >
                            Dashboard
                         </MenuItem>
-                        <MenuItem icon={<FaGem />}> Components</MenuItem>
                     </Menu>
                     <Menu iconShape="circle">
                         <SubMenu
-                            suffix={<span className="badge yellow">3</span>}
-                            icon={<FaRegLaughWink />}
+                            icon={<FaGem />}
+                            title="Features"
                         >
-                            <MenuItem> 1</MenuItem>
-                            <MenuItem> 2</MenuItem>
-                            <MenuItem> 3</MenuItem>
+                            <MenuItem> Manager User</MenuItem>
+                            <MenuItem> Manager Quiz</MenuItem>
+                            <MenuItem> Manager Questions</MenuItem>
                         </SubMenu>
                     </Menu>
                 </SidebarContent>
@@ -76,7 +78,7 @@ const SideBar = (props) => {
                         >
                             <FaGithub />
                             <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                viewSource
+                                Dat Luong
                             </span>
                         </a>
                     </div>
