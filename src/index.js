@@ -11,6 +11,7 @@ import Admin from './components/Admin/Admin';
 import Home from './components/Home/Home'
 import ManagerUser from './components/Admin/Content/ManageUser';
 import Dashboard from './components/Admin/Content/Dashboard';
+import {StoreProvider} from './components/User/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -43,7 +44,9 @@ const router = createBrowserRouter([
 root.render(
   <Provider store={store}>
     {/* <React.StrictMode> */}
-      <RouterProvider router={router} />
+      <StoreProvider>
+        <RouterProvider router={router} />
+      </StoreProvider>
     {/* </React.StrictMode> */}
   </Provider>
 );
